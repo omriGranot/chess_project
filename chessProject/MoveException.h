@@ -1,19 +1,15 @@
 #pragma once
 
 #include <string>
+#include <exception>
 
-class MoveException 
+class MoveException : std::exception
 {
-private:
-    std::string message;
-
 public:
     // Constructor
-    explicit MoveException(const std::string& msg);
+    MoveException();
 
     // Get error message
     const char* what() const;
-
-    virtual ~MoveException();
 };
 

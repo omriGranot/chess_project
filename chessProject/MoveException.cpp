@@ -1,17 +1,13 @@
 #include "MoveException.h"
 
 // Constructor
-MoveException::MoveException(const std::string& msg) : message(msg) 
+MoveException::MoveException()
 {
 }
 
 // Get error message
 const char* MoveException::what() const 
 {
-    return message.c_str();
+    return "This move is ileagal!";
 }
 
-// Destructor
-MoveException::~MoveException() 
-{
-}

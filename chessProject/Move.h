@@ -13,8 +13,10 @@ public:
     Move(int src, int dst, char t, char c);
     Move();
 
-    // Virtual destructor
-    virtual ~Move();
+    // Destructor
+    ~Move();
+
+    bool checkValidity(const board b&);
 
     // Getters
     int getSource() const;
