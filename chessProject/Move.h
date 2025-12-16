@@ -1,22 +1,23 @@
 #pragma once
+#include "Board.h"
 
 class Move 
 {
 private:
-    int source;    
-    int dest;       
-    char type;      
-    char color;     
+    short _src;    
+    short _dest;       
+    char _type;      
+    char _color;     
 
 public:
     // Constructor
-    Move(int src, int dst, char t, char c);
+    Move(char m[4], char t, char c);
     Move();
 
     // Destructor
     ~Move();
 
-    bool checkValidity(const board b&);
+    bool checkValidity(const Board& b);
 
     // Getters
     int getSource() const;
