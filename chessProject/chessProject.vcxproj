@@ -126,6 +126,10 @@
     <ClInclude Include="Move.h" />
     <ClInclude Include="MoveException.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Move.cpp" />
+    <ClCompile Include="MoveException.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
