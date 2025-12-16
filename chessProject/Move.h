@@ -20,8 +20,8 @@ public:
     bool checkValidity(const Board& b);
 
     // Getters
-    int getSource() const;
-    int getDest() const;
+    short getSource() const;
+    short getDest() const;
     char getType() const;
     char getColor() const;
 
