@@ -6,7 +6,7 @@ class King : public Piece
 public:
     // Constructors
     King(char c, short pos);
-    King();        // Default
+    King();        // loc
 
     // Destructor
     ~King();

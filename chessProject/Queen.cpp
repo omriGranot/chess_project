@@ -1,7 +1,7 @@
 #include "Queen.h" 
 
 // Constructor
-Queen::Queen(char c, short pos) : Rook(c, pos), Bishop(c, pos) 
+Queen::Queen(char c, short loc) : Rook(c, loc), Bishop(c, loc) 
 {
 }
 

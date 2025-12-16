@@ -1,13 +1,13 @@
 #include "Piece.h"
 
 // Constructor
-Piece::Piece(char t, char c, int pos)
-	: type(t), color(c) 
+Piece::Piece(char t, char c, int loc)
+	: type(t), color(c), location(loc)
 {
 }
 
-// Default constructor		
-Piece::Piece() : type(' '), color(' ') 
+// Default constructor
+Piece::Piece() : type(' '), color(' '), location(0)
 {
 }
 
@@ -27,9 +27,9 @@ char Piece::getColor() const
 	return color;
 }
 
-short Piece::getPosition() const
+short Piece::getLocation() const
 {
-	return position;
+	return location;
 }
 
 
@@ -45,9 +45,9 @@ void Piece::setColor(char c)
 	color = c;
 }
 
-void Piece::setPosition(int pos)
+void Piece::setLocation(int loc)
 {
-	position = pos;
+	location = loc;
 }
 
 

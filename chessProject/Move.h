@@ -28,5 +28,6 @@ public:
     void setSourceAndDest(char m[4]);
     void setType(char t);
     void setColor(char c);
+
 };
 

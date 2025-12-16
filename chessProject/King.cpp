@@ -1,7 +1,7 @@
 #include "King.h"
 
 // Constructor
-King::King(char c, short pos) : Piece('K', c, pos) 
+King::King(char c, short loc) : Piece('K', c, loc) 
 {
 }
 

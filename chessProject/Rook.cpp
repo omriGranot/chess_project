@@ -1,7 +1,7 @@
 #include "Rook.h" 
 
 // Constructor
-Rook::Rook(char c, short pos) : Piece('R', c, pos) 
+Rook::Rook(char c, short loc) : Piece('R', c, loc) 
 {
 }	
 

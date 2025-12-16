@@ -1,7 +1,7 @@
 #include "Bishop.h"
 
 // Constructor
-Bishop::Bishop(char c, short pos) : Piece('B', c, pos) 
+Bishop::Bishop(char c, short loc) : Piece('B', c, loc) 
 {
 }
 
