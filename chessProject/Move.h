@@ -1,17 +1,16 @@
 #pragma once
 #include "Board.h"
+#include "Piece.h"
 
 class Move 
 {
 private:
-    short _src;    
-    short _dest;       
-    char _type;      
-    char _color;     
+    Piece* _movingPiece;    
+    short _dest;            
 
 public:
     // Constructor
-    Move(char m[4], char t, char c);
+    Move(char m[4], const Board& b);
     Move();
 
     // Destructor
@@ -26,8 +25,7 @@ public:
     char getColor() const;
 
     // Setters
-    void setSource(int src);
-    void setDest(int dst);
+    void setSourceAndDest(char m[4]);
     void setType(char t);
     void setColor(char c);
 };

@@ -1,16 +1,20 @@
 #include "Move.h"
+#include "MoveException.h"
 
 // Constructor
-Move::Move(char m[4], char t, char c)
-    : _type(t), _color(c) 
+Move::Move(char m[4], const Board& b)
 {
-    _src = (m[0] - '0') * 10 + (m[1] - '0'); // Convert first two chars to int, "a1" -> 11
-	_dest = (m[2] - '0') * 10 + (m[3] - '0'); // Convert last two chars to int, "a2" -> 12
-}
+    if (m[0] - 'a' - 1 < 0 || m[0] - 'a' - 1 > 7 || m[1] - '0' - 1 < 0 || m[1] - '0' - 1 > 7)
+    {
+        throw MoveException();
+    }
+	_movingPiece = b.getPieceAt(m[1] - '0', m[0] - 'a');
+    if (!_movingPiece)
+    {
+		throw MoveException();
+    }
 
-// Default constructor
-Move::Move() : _src(-1), _dest(-1), _type(' '), _color(' ') 
-{
+	setSourceAndDest(m);
 }
 
 // Destructor
@@ -19,38 +23,33 @@ Move::~Move()
 }
 
 // Getters
-int Move::getSource() const 
+short Move::getSource() const 
 {
-    return _src;
+    return _movingPiece->getLocation();
 }
 
-int Move::getDest() const 
+short Move::getDest() const 
 {
     return _dest;
 }
 
 char Move::getType() const 
 {
-    return _type;
+    return _movingPiece->getType();
 }
 
 char Move::getColor() const 
 {
-    return _color;
+    return _movingPiece->getColor();
 }
 
-// Setters
-void Move::setSource(int src) 
+void Move::setSourceAndDest(char m[4])
 {
-    _src = src;
+    _src = (m[0] - '0') * 10 + (m[1] - '0'); // Convert first two chars to int, "a1" -> 11
+    _dest = (m[2] - '0') * 10 + (m[3] - '0'); // Convert last two chars to int, "a2" -> 12
 }
 
-void Move::setDest(int dst) 
-{
-    _dest = dst;
-}
-
-void Move::setType(char t) 
+void Move::setType(char t)
 {
     _type = t;
 }
