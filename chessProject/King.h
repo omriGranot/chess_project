@@ -5,7 +5,7 @@ class King : public Piece
 {
 public:
     // Constructors
-    King(char c);
+    King(char c, short pos);
     King();        // Default
 
     // Destructor

@@ -1,10 +1,12 @@
 #include "Bishop.h"
+
 // Constructor
-Bishop::Bishop(char c) : Piece('B', c) 
+Bishop::Bishop(char c, short pos) : Piece('B', c, pos) 
 {
 }
+
 // Default constructor
-Bishop::Bishop() : Piece('B', ' ') 
+Bishop::Bishop() : Piece('B', ' ', 0) 
 {
 }
 
@@ -12,4 +14,3 @@ Bishop::Bishop() : Piece('B', ' ')
 Bishop::~Bishop() 
 {
 }
-

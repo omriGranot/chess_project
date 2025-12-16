@@ -6,7 +6,7 @@ class Queen : public virtual Rook, public virtual Bishop
 {
 public:
     // Constructors
-    Queen(char c);  
+    Queen(char c, short pos);
     Queen();        // Default
 
     // Destructor

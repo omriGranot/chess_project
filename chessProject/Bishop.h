@@ -5,8 +5,9 @@ class Bishop : public Piece
 {
 public:
     // Constructors
-    Bishop(char c);  
-    Bishop();        
+    Bishop(char c, short pos);
+    Bishop(); 
+
 
     // Destructor
     ~Bishop();

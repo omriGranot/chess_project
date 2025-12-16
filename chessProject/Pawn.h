@@ -5,7 +5,7 @@ class Pawn : public Piece
 {
 public:
     // Constructors
-    Pawn(char c);  
+    Pawn(char c, short pos);
     Pawn();        // Default
 
     // Destructor

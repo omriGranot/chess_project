@@ -27,6 +27,13 @@ char Piece::getColor() const
 	return color;
 }
 
+short Piece::getPosition() const
+{
+	return position;
+}
+
+
+
 // Setters
 void Piece::setType(char t) 
 {
@@ -37,3 +44,10 @@ void Piece::setColor(char c)
 {
 	color = c;
 }
+
+void Piece::setPosition(int pos)
+{
+	position = pos;
+}
+
+

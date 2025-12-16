@@ -1,11 +1,12 @@
-#include "Rook.h"
+#include "Rook.h" 
+
 // Constructor
-Rook::Rook(char c) : Piece('R', c) 
+Rook::Rook(char c, short pos) : Piece('R', c, pos) 
 {
-}
+}	
 
 // Default constructor
-Rook::Rook() : Piece('R', ' ') 
+Rook::Rook() : Piece('R', ' ', 0) 
 {
 }
 
