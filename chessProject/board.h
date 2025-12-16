@@ -15,4 +15,5 @@ public:
 
 private:
     std::vector<std::vector<Piece*>> board;   // 8x8 board storing pointers to pieces, nullptr = empty square
+
 };

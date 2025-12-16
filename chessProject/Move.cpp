@@ -59,3 +59,4 @@ void Move::setColor(char c)
 {
     _color = c;
 }
+

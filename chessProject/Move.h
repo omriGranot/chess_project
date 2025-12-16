@@ -30,5 +30,6 @@ public:
     void setDest(int dst);
     void setType(char t);
     void setColor(char c);
+
 };
 

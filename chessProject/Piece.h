@@ -6,25 +6,25 @@ class Piece
 private:
     char type;
     char color;
-    short position;
+    short location;
 
 public:
     // Constructors
-    Piece(char t, char c, int pos);
+    Piece(char t, char c, int loc);
     Piece();  // Default
 
     // Virtual destructor (required for polymorphism)
-    virtual ~Piece();
+    ~Piece();
 
     // Getters
     char getType() const;
     char getColor() const;
-    short getPosition() const;
+    short getLocation() const;
 
     // Setters
     void setType(char t);
     void setColor(char c);
-    void setPosition(int pos);
+    void setLocation(int loc);
 
     // Returns all legal moves for this piece
     virtual std::vector<short> getLegalMoves() const = 0;
