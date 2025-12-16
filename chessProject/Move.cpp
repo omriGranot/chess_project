@@ -1,13 +1,15 @@
 #include "Move.h"
 
 // Constructor
-Move::Move(int src, int dst, char t, char c)
-    : source(src), dest(dst), type(t), color(c) 
+Move::Move(char m[4], char t, char c)
+    : _type(t), _color(c) 
 {
+    _src = (m[0] - '0') * 10 + (m[1] - '0'); // Convert first two chars to int, "a1" -> 11
+	_dest = (m[2] - '0') * 10 + (m[3] - '0'); // Convert last two chars to int, "a2" -> 12
 }
 
 // Default constructor
-Move::Move() : source(-1), dest(-1), type(' '), color(' ') 
+Move::Move() : _src(-1), _dest(-1), _type(' '), _color(' ') 
 {
 }
 
@@ -19,41 +21,41 @@ Move::~Move()
 // Getters
 int Move::getSource() const 
 {
-    return source;
+    return _src;
 }
 
 int Move::getDest() const 
 {
-    return dest;
+    return _dest;
 }
 
 char Move::getType() const 
 {
-    return type;
+    return _type;
 }
 
 char Move::getColor() const 
 {
-    return color;
+    return _color;
 }
 
 // Setters
 void Move::setSource(int src) 
 {
-    source = src;
+    _src = src;
 }
 
 void Move::setDest(int dst) 
 {
-    dest = dst;
+    _dest = dst;
 }
 
 void Move::setType(char t) 
 {
-    type = t;
+    _type = t;
 }
 
 void Move::setColor(char c) 
 {
-    color = c;
+    _color = c;
 }

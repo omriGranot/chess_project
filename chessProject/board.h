@@ -1,11 +1,17 @@
 #pragma once
 
 #include "Piece.h"
+#include "Move.h"
 #include <vector>
-class board
+
+
+class Board
 {
 public:
-
+	Board();
+	~Board();
+	Piece* getPieceAt(int row, int col) const;
+	void movePiece(const Move& move);
 private:
-	vector<vector<Piece*>> board;
+	std::vector<std::vector<Piece*>> board;
 };
