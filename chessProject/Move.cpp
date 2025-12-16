@@ -1,6 +1,11 @@
 #include "Move.h"
 #include "MoveException.h"
 
+bool Move::checkLocationValidity(short loc)
+{
+    return !(loc % 10 < 1 || loc / 10 < 1 || loc % 10 > 8 || loc / 10 > 8);
+}
+
 // Constructor
 Move::Move(char m[4], const Board& b)
 {
@@ -14,7 +19,7 @@ Move::Move(char m[4], const Board& b)
 		throw MoveException();
     }
 
-	setSourceAndDest(m);
+	setDest(m);
 }
 
 // Destructor
@@ -43,19 +48,8 @@ char Move::getColor() const
     return _movingPiece->getColor();
 }
 
-void Move::setSourceAndDest(char m[4])
+void Move::setDest(char m[4])
 {
-    _src = (m[0] - '0') * 10 + (m[1] - '0'); // Convert first two chars to int, "a1" -> 11
-    _dest = (m[2] - '0') * 10 + (m[3] - '0'); // Convert last two chars to int, "a2" -> 12
-}
-
-void Move::setType(char t)
-{
-    _type = t;
-}
-
-void Move::setColor(char c) 
-{
-    _color = c;
+    _dest = (m[3] - '0') * 10 + (m[2] - 'a'); // Convert last two chars to int, "a2" -> 12
 }
 

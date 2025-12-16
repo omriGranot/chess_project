@@ -1,12 +1,13 @@
 #pragma once
 #include <vector>
+#include "Board.h"
 
 class Piece
 {
 private:
-    char type;
-    char color;
-    short location;
+    char _type;
+    char _color;
+    short _location;
 
 public:
     // Constructors
@@ -27,5 +28,6 @@ public:
     void setLocation(int loc);
 
     // Returns all legal moves for this piece
-    virtual std::vector<short> getLegalMoves() const = 0;
+    virtual std::vector<short> getLegalMoves(const Board& b) const = 0;
+    
 };

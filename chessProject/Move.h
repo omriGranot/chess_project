@@ -9,6 +9,9 @@ private:
     short _dest;            
 
 public:
+
+    bool static checkLocationValidity(short loc);
+
     // Constructor
     Move(char m[4], const Board& b);
     Move();
@@ -25,7 +28,7 @@ public:
     char getColor() const;
 
     // Setters
-    void setSourceAndDest(char m[4]);
+    void setDest(char m[4]);
     void setType(char t);
     void setColor(char c);
 

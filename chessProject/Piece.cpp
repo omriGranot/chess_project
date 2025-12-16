@@ -2,12 +2,12 @@
 
 // Constructor
 Piece::Piece(char t, char c, int loc)
-	: type(t), color(c), location(loc)
+	: _type(t), _color(c), _location(loc)
 {
 }
 
 // Default constructor
-Piece::Piece() : type(' '), color(' '), location(0)
+Piece::Piece() : _type(' '), _color(' '), _location(0)
 {
 }
 
@@ -19,17 +19,17 @@ Piece::~Piece()
 // Getters
 char Piece::getType() const 
 {
-	return type;
+	return _type;
 }
 
 char Piece::getColor() const 
 {
-	return color;
+	return _color;
 }
 
 short Piece::getLocation() const
 {
-	return location;
+	return _location;
 }
 
 
@@ -37,17 +37,17 @@ short Piece::getLocation() const
 // Setters
 void Piece::setType(char t) 
 {
-	type = t;
+	_type = t;
 }
 
 void Piece::setColor(char c) 
 {
-	color = c;
+	_color = c;
 }
 
 void Piece::setLocation(int loc)
 {
-	location = loc;
+	_location = loc;
 }
 
 
