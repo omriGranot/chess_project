@@ -6,19 +6,20 @@ class Move
 {
 private:
     Piece* _movingPiece;    
-    short _dest;            
+    short _dest;   
+
 
 public:
 
     bool static checkLocationValidity(short loc);
 
     // Constructor
-    Move(char m[4], const Board& b);
-    Move();
+    Move(char m[4], bool color, const Board& b);
 
     // Destructor
     ~Move();
 
+	void setUp(char m[4], bool color, const Board& b);
     bool checkValidity(const Board& b);
 
     // Getters

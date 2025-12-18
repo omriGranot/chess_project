@@ -6,12 +6,12 @@ class Piece
 {
 private:
     char _type;
-    char _color;
+    bool _color;
     short _location;
 
 public:
     // Constructors
-    Piece(char t, char c, int loc);
+    Piece(char t, bool c, int loc);
     Piece();  // Default
 
     // Virtual destructor (required for polymorphism)
@@ -19,14 +19,14 @@ public:
 
     // Getters
     char getType() const;
-    char getColor() const;
+    bool getColor() const;
     short getLocation() const;
 
     // Setters
     void setType(char t);
-    void setColor(char c);
+    bool setColor(bool c);
     void setLocation(int loc);
-
+	bool checkCheck(const Board& b) const;
     // Returns all legal moves for this piece
     virtual std::vector<short> getLegalMoves(const Board& b) const = 0;
     

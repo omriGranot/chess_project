@@ -7,24 +7,43 @@ bool Move::checkLocationValidity(short loc)
 }
 
 // Constructor
-Move::Move(char m[4], const Board& b)
+Move::Move(char m[4],bool color, const Board& b)
 {
-    if (m[0] - 'a' - 1 < 0 || m[0] - 'a' - 1 > 7 || m[1] - '0' - 1 < 0 || m[1] - '0' - 1 > 7)
-    {
-        throw MoveException();
-    }
-	_movingPiece = b.getPieceAt(m[1] - '0', m[0] - 'a');
-    if (!_movingPiece)
-    {
-		throw MoveException();
-    }
-
-	setDest(m);
+    setUp(m, color, b);
 }
 
+void Move::setUp(char m[4], bool color, const Board& b)
+{
+    if(m[2] == m[0] && m[3] == m[1])
+    {
+        throw MoveException(7);
+	}
+        
+    if (m[0] - 'a' - 1 < 0 || m[0] - 'a' - 1 > 7 || m[1] - '0' - 1 < 0 || m[1] - '0' - 1 > 7)
+    {
+        throw MoveException(5);
+    }
+    _movingPiece = b.getPieceAt(m[1] - '0', m[0] - 'a');
+    if (!_movingPiece || !_movingPiece->getColor() == color)
+    {
+        throw MoveException(2);
+    }
+
+    setDest(m);
+}
 // Destructor
 Move::~Move() 
 {
+}
+
+bool Move::checkValidity(const Board& b)
+{
+    std::vector<short> legalMoves = _movingPiece->getLegalMoves(b);
+    if (!std::count(legalMoves.begin(), legalMoves.end(), _dest))
+    {
+		throw MoveException(6);
+    }
+    return true;
 }
 
 // Getters
