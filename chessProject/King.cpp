@@ -28,7 +28,7 @@ std::vector<short> King::getLegalMoves(const Board& b) const
 			if(Move::checkLocationValidity(locToCheck))
 			{
 				Piece* pieceAtDest = b.getPieceAt(locToCheck / 10, locToCheck % 10);
-				if (!pieceAtDest || pieceAtDest->getColor() != this->getColor())
+				if (!pieceAtDest && pieceAtDest->getColor() != this->getColor() && Piece::checkCheck())
 				{
 					legalMoves.push_back(locToCheck);
 				}

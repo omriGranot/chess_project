@@ -17,12 +17,11 @@ Rook::~Rook()
 
 std::vector<short> Rook::getLegalMoves(const Board& b) const
 {
-    int i;
 	short loc = this->getLocation();
 	std::vector<short> legalMoves;
-	getSquares(b, loc, 10);
-	getSquares(b, loc, -10);
-	getSquares(b, loc, 1);
-	getSquares(b, loc, -1);
-
+	legalMoves += getSquares(b, loc, 10);
+	legalMoves += getSquares(b, loc, -10);
+	legalMoves += getSquares(b, loc, 1);
+	legalMoves += getSquares(b, loc, -1);
+	return legalMoves;
 }

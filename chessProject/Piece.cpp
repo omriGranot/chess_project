@@ -68,7 +68,7 @@ bool Piece::checkCheck(const Board& b) const
 
 std::vector<short> Piece::getSquares(const Board& b, const short startLoc, const short change) const
 {
-	int i;
+	int i = 0;
 	std::vector<short> legalMoves;
 	for (i = startLoc; Move::checkLocationValidity(i); i += change)
 	{

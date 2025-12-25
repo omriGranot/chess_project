@@ -2,6 +2,13 @@
 #include <vector>
 #include "Board.h"
 
+
+template<typename T>
+std::vector<T>& operator+=(std::vector<T>& a, const std::vector<T>& b)
+{
+    a.insert(a.end(), b.begin(), b.end());
+    return a;
+}
 class Board;
 
 class Piece
