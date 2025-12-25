@@ -7,7 +7,7 @@ Piece::Piece(char t, bool c, int loc)
 }
 
 // Default constructor
-Piece::Piece() : _type(' '), _color(' '), _location(0)
+Piece::Piece() : _type(' '), _color(true), _location(0)
 {
 }
 
@@ -40,7 +40,7 @@ void Piece::setType(char t)
 	_type = t;
 }
 
-bool Piece::setColor(bool c) 
+void Piece::setColor(bool c)
 {
 	_color = c;
 }
@@ -56,13 +56,14 @@ bool Piece::checkCheck(const Board& b) const
 	std::vector<short> legalMoves = this->getLegalMoves(b);
 	for(int i = 0; i < legalMoves.size(); i++)
 	{
-		Piece* pieceAtDest = b.getPieceAt(legalMoves[i] / 10, legalMoves[i] % 10);
+		Piece* pieceAtDest = b.getPieceAt(legalMoves[i]);
 		if(pieceAtDest && pieceAtDest->getType() == 'K' && pieceAtDest->getColor() != this->getColor())
 		{
 			pointsToKing = true;
 			break;
 		}
 	}
+	
 }
 
 

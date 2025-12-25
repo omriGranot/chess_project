@@ -39,7 +39,9 @@ const char* MoveException::what() const
         case 7:
 			return "Invalid move: src and dest are the same.";
             break;
-        
+        default:
+            return "Unknown move exception.";
+			break;
 
     }
 }

@@ -62,7 +62,7 @@ char Move::getType() const
     return _movingPiece->getType();
 }
 
-char Move::getColor() const 
+bool Move::getColor() const 
 {
     return _movingPiece->getColor();
 }

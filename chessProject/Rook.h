@@ -5,7 +5,7 @@ class Rook : public Piece
 {
 public:
     // Constructors
-    Rook(char c, short pos);
+    Rook(bool c, short pos);
     Rook();        // Default
 
     // Destructor

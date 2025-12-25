@@ -1,12 +1,12 @@
 #include "Queen.h" 
 
 // Constructor
-Queen::Queen(char c, short loc) : Rook(c, loc), Bishop(c, loc) 
+Queen::Queen(bool c, short loc) : Rook(c, loc), Bishop(c, loc) 
 {
 }
 
 // Default constructor
-Queen::Queen() : Rook(' ', 0), Bishop(' ', 0) 
+Queen::Queen() : Rook(true, 0), Bishop(true, 0) 
 {
 }
 

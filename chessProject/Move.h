@@ -2,6 +2,9 @@
 #include "Board.h"
 #include "Piece.h"
 
+class Piece;
+class Board;
+
 class Move 
 {
 private:
@@ -26,12 +29,12 @@ public:
     short getSource() const;
     short getDest() const;
     char getType() const;
-    char getColor() const;
+    bool getColor() const;
 
     // Setters
     void setDest(char m[4]);
     void setType(char t);
-    void setColor(char c);
+    void setColor(bool c);
 
 };
 

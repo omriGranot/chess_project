@@ -1,12 +1,12 @@
 #include "King.h"
 
 // Constructor
-King::King(char c, short loc) : Piece('K', c, loc) 
+King::King(bool c, short loc) : Piece('K', c, loc) 
 {
 }
 
 // Default constructor
-King::King() : Piece('K', ' ', 0) 
+King::King() : Piece('K', true, 0) 
 {
 }
 

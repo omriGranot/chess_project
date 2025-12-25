@@ -11,9 +11,9 @@ Board::~Board()
 	{
 		for(int j = 0; j < 8; ++j)
 		{
-			if (board[i][j])
+			if (_board[i][j])
 			{
-				delete board[i][j];
+				delete _board[i][j];
 			}
 		}
 	}
@@ -23,7 +23,12 @@ Board::~Board()
 // Returns nullptr if the square is empty
 Piece* Board::getPieceAt(int row, int col) const
 {
-	return board[row][col];
+	return _board[row][col];
+}
+
+Piece* Board::getPieceAt(int loc) const
+{
+	return getPieceAt(loc / 10, loc % 10);
 }
 
 // Convert the source and destination from Move's integer format to row and column
@@ -36,13 +41,13 @@ void Board::movePiece(const Move& move)
 
 	// Get the piece at the source square
 	Piece* piece = getPieceAt(srcRow, srcCol);
-	if (board[dstRow][dstCol])
+	if (_board[dstRow][dstCol])
 	{
-		delete board[dstRow][dstCol];
+		delete _board[dstRow][dstCol];
 	}
 	// Move the piece to the destination square
-	board[dstRow][dstCol] = piece;
+	_board[dstRow][dstCol] = piece;
 	
 	// Clear the source square
-	board[srcRow][srcCol] = nullptr;
+	_board[srcRow][srcCol] = nullptr;
 }

@@ -2,6 +2,8 @@
 #include <vector>
 #include "Board.h"
 
+class Board;
+
 class Piece
 {
 private:
@@ -24,7 +26,7 @@ public:
 
     // Setters
     void setType(char t);
-    bool setColor(bool c);
+    void setColor(bool c);
     void setLocation(int loc);
 	bool checkCheck(const Board& b) const;
     // Returns all legal moves for this piece
