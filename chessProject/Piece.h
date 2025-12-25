@@ -29,6 +29,7 @@ public:
     void setColor(bool c);
     void setLocation(int loc);
 	bool checkCheck(const Board& b) const;
+	std::vector<short> getSquares(const Board& b, const short startLoc,const short change) const;
     // Returns all legal moves for this piece
     virtual std::vector<short> getLegalMoves(const Board& b) const = 0;
     

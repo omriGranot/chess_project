@@ -69,6 +69,6 @@ bool Move::getColor() const
 
 void Move::setDest(char m[4])
 {
-    _dest = (m[3] - '0') * 10 + (m[2] - 'a'); // Convert last two chars to int, "a2" -> 12
+    _dest = (m[3] - '0') * 10 + (m[2] - 'a'); // Convert last two chars to int, "a2" -> 21
 }
 

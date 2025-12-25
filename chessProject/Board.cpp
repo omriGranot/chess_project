@@ -28,7 +28,7 @@ Piece* Board::getPieceAt(int row, int col) const
 
 Piece* Board::getPieceAt(int loc) const
 {
-	return getPieceAt(loc / 10, loc % 10);
+	return getPieceAt(loc / 10 - 1, loc % 10 -1);
 }
 
 // Convert the source and destination from Move's integer format to row and column

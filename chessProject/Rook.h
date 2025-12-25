@@ -10,4 +10,7 @@ public:
 
     // Destructor
     ~Rook();
+    
+	// Returns all legal moves for this piece
+	std::vector<short> getLegalMoves(const Board& b) const override;
 };

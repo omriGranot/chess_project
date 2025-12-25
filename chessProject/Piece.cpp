@@ -63,7 +63,29 @@ bool Piece::checkCheck(const Board& b) const
 			break;
 		}
 	}
-	
+	return pointsToKing;
+}
+
+std::vector<short> Piece::getSquares(const Board& b, const short startLoc, const short change) const
+{
+	int i;
+	std::vector<short> legalMoves;
+	for (i = startLoc; Move::checkLocationValidity(i); i += change)
+	{
+		Piece* pieceAtDest = b.getPieceAt(i);
+		if (!pieceAtDest)
+		{
+			legalMoves.push_back(i);
+		}
+		else
+		{
+			if (pieceAtDest->getColor() != this->getColor())
+			{
+				legalMoves.push_back(i);
+			}
+			break;
+		}
+	}
 }
 
 
