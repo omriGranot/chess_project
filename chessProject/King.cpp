@@ -32,7 +32,7 @@ std::vector<short> King::getLegalMoves(const Board& b) const
 				{
 					legalMoves.push_back(locToCheck);
 				}
-			}
+			} 
 		}
 	}
 	return legalMoves;
