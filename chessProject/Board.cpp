@@ -51,3 +51,19 @@ void Board::movePiece(const Move& move)
 	// Clear the source square
 	_board[srcRow][srcCol] = nullptr;
 }
+
+bool Board::isInCheck(bool color) const
+{
+	for(int i = 0; i < 8; ++i)
+	{
+		for(int j = 0; j < 8; ++j)
+		{
+			Piece* piece = _board[i][j];
+			if(piece && piece->getColor() != color && piece->checkCheck(*this))
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}

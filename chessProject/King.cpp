@@ -28,8 +28,25 @@ std::vector<short> King::getLegalMoves(const Board& b) const
 			if(Move::checkLocationValidity(locToCheck))
 			{
 				Piece* pieceAtDest = b.getPieceAt(locToCheck / 10, locToCheck % 10);
-				if (!pieceAtDest && pieceAtDest->getColor() != this->getColor() && Piece::checkCheck())
+				if (pieceAtDest && pieceAtDest->getColor() != this->getColor())
 				{
+					try
+					{
+						Board tempBoard = b;
+						King testKing = King(this->getColor(), loc);
+						Move testMove = Move();
+						testMove.setDest(locToCheck);
+						testMove.setMovingPiece(&testKing);
+						tempBoard.movePiece(testMove);
+						if (tempBoard.isInCheck(this->getColor()))
+						{
+							throw;
+						}
+					}
+					catch(...)
+					{
+						continue;
+					}
 					legalMoves.push_back(locToCheck);
 				}
 			} 

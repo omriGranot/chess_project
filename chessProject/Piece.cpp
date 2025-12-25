@@ -86,6 +86,7 @@ std::vector<short> Piece::getSquares(const Board& b, const short startLoc, const
 			break;
 		}
 	}
+	return legalMoves;
 }
 
 

@@ -18,6 +18,7 @@ public:
 
     // Constructor
     Move(char m[4], bool color, const Board& b);
+	Move();  // Default
 
     // Destructor
     ~Move();
@@ -33,6 +34,8 @@ public:
 
     // Setters
     void setDest(char m[4]);
+    void setDest(short dest);
+	void setMovingPiece(Piece* p);
     void setType(char t);
     void setColor(bool c);
 

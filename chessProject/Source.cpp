@@ -5,6 +5,7 @@ in order to read and write information from and to the Backend
 */
 
 #include "Pipe.h"
+#include "Move.h"
 #include <iostream>
 #include <thread>
 #include <stdlib.h>
@@ -56,12 +57,12 @@ void main()
 
 	// get message from graphics
 	string msgFromGraphics = p.getMessageFromGraphics();
-
+	Move currentMove();
 	while (msgFromGraphics != "quit")
 	{
 		// should handle the string the sent from graphics
 		// according the protocol. Ex: e2e4           (move e2 to e4)
-		
+		currentMove.setUp(msgFrom )
 		// YOUR CODE
 		strcpy_s(msgToGraphics, "YOUR CODE"); // msgToGraphics should contain the result of the operation
 

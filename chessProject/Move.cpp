@@ -12,6 +12,11 @@ Move::Move(char m[4],bool color, const Board& b)
     setUp(m, color, b);
 }
 
+Move::Move() :
+	_movingPiece(nullptr), _dest(0)
+{
+}
+
 void Move::setUp(char m[4], bool color, const Board& b)
 {
     if(m[2] == m[0] && m[3] == m[1])
@@ -70,5 +75,15 @@ bool Move::getColor() const
 void Move::setDest(char m[4])
 {
     _dest = (m[3] - '0') * 10 + (m[2] - 'a'); // Convert last two chars to int, "a2" -> 21
+}
+
+void Move::setDest(short dest)
+{
+	_dest = dest;
+}
+
+void Move::setMovingPiece(Piece* p)
+{
+	_movingPiece = p;
 }
 
