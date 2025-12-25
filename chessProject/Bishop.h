@@ -7,7 +7,8 @@ public:
     // Constructors
     Bishop(bool c, short loc);
     Bishop(); 
-
+    
+	std::vector<short> getLegalMoves(const Board& b) const override;
 
     // Destructor
     ~Bishop();

@@ -10,9 +10,21 @@ Pawn::Pawn() : Piece('P', true, 0)
 {
 }
 
+bool Pawn::getHasMoved() const
+{
+	return _hasMoved;
+}
+
+
+void Pawn::setHasMoved(bool moved)
+{
+	_hasMoved = moved;
+}
+
 // Destructor
 Pawn::~Pawn() 
 {
 }
+
 
 
